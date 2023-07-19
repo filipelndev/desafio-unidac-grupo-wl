@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Form</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Employee Form</h1>
+
+    <form th:action="@{/api/employees/employees}" th:object="${employee}" method="post">
+        <label>Name: <input type="text" th:field="*{name}" /></label><br>
+        <label>CPF: <input type="text" th:field="*{cpf}" /></label><br>
+        <label>Breakfast Options: <input type="text" th:field="*{breakfastOptions}" /></label><br>
+        <label>Breakfast Date: <input type="text" th:field="*{breakfastDate}" /></label><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
